@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import profilePhoto from "./assets/profile.jpg";
 import './Home.css'; // Custom CSS file for animation
 import { useNavigate } from 'react-router-dom';
