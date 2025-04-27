@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Header from './Header';
 import Home from './Home';
+import './index.css';  // This should correctly import the file
+
 import Info from './Info';
 import Education from './Education';
 import Projects from './Projects';
@@ -13,7 +15,6 @@ import About from './About';
 import Contact from './Contact';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
