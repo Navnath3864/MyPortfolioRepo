@@ -2,12 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Skills() {
-  const backgroundStyle = {
-    minHeight: '100vh',
-    padding: '40px',
-    color: 'white',
-  };
-
+  
   const cardStyle = {
     borderRadius: '15px',
     boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
@@ -39,13 +34,14 @@ function Skills() {
   ];
 
   return (
-    <div style={backgroundStyle}>
-      <nav className="d-flex justify-content-center gap-2 mb-4">
-        <Link className="btn btn-outline-light" to="/home/info/education">Education</Link>
-        <Link className="btn btn-outline-light" to="/home/info/projects">Projects</Link>
-        <Link className="btn btn-outline-light" to="/home/info/skills">Skills</Link>
-        <Link className="btn btn-outline-light" to="/home/info/certifications">Certificates</Link>
-      </nav>
+    <>
+    <div className='mt-3'>
+      <nav className="d-flex justify-content-center gap-3 mb-4">
+              <Link className="btn btn-outline-light" to="/home/info/education">Eduacation</Link>
+              <Link className="btn btn-outline-light" to="/home/info/projects">Projects</Link>
+              <Link className="btn btn-outline-light" to="/home/info/skills">Skills</Link>
+              <Link className="btn btn-outline-light" to="/home/info/certifications">Certificates</Link>
+            </nav>
 
       <div className="container py-5">
         <h2 className="text-center mb-5 text-white">My Skills</h2>
@@ -66,7 +62,9 @@ function Skills() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+
+    </>
   );
 }
 
