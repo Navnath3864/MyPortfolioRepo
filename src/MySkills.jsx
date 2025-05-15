@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Skills() {
+function MySkills() {
+  
   const cardStyle = {
-    borderRadius: '15px',
+    borderRadius: '10px',
     boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-    minHeight: '250px',
     background: 'linear-gradient(135deg, rgb(23, 22, 23), rgb(145, 143, 143))',
+    color: 'white',
+    minHeight: '180px',
   };
 
   const skillsData = [
@@ -33,25 +35,25 @@ function Skills() {
   ];
 
   return (
-    <div className="mt-3">
+    <>
       {/* Navigation Bar */}
-      <nav className="d-flex justify-content-center gap-3 mb-4">
+      <nav className="d-flex justify-content-center gap-2 mt-4" aria-label="Skills section navigation">
         <Link className="btn btn-outline-light" to="/home/info/education">Education</Link>
         <Link className="btn btn-outline-light" to="/home/info/projects">Projects</Link>
-        <Link className="btn btn-outline-light" to="/home/info/skills">Skills</Link>
+        <Link className="btn btn-outline-light active" to="/home/info/skills" aria-current="page">Skills</Link>
         <Link className="btn btn-outline-light" to="/home/info/certifications">Certificates</Link>
       </nav>
 
-      {/* Skills Section */}
+      {/* Skills Cards */}
       <div className="container py-5">
-        <h2 className="text-center mb-5 text-white">My Skills</h2>
+        <h2 className="text-center text-white mb-4">My Skills</h2>
         <div className="row g-4">
-          {skillsData.map((category, index) => (
-            <div className="col-md-4" key={index}>
-              <div className="card text-white" style={cardStyle}>
+          {skillsData.map((category, idx) => (
+            <div className="col-md-4" key={idx}>
+              <div className="card" style={cardStyle}>
                 <div className="card-body">
                   <h5 className="card-title">{category.title}</h5>
-                  <ul className="mt-3">
+                  <ul className="mt-2">
                     {category.skills.map((skill, i) => (
                       <li key={i}>{skill}</li>
                     ))}
@@ -62,8 +64,8 @@ function Skills() {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default Skills;
+export default MySkills;
